@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules/
-**/node_modules
 /.pnp
 .pnp.js
 # testing
@@ -10,7 +9,9 @@
 
 # production
 /build
-/ckeditor5/node_modules
+/ckeditor5
+
+
 # misc
 .DS_Store
 .env.local
