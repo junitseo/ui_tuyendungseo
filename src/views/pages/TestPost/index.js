@@ -21,6 +21,7 @@ import { getPagingPost } from "api/post";
 import Select2 from "react-select2-wrapper";
 import DetailPost from "./DetailPost";
 import { EnterHelper } from "utils/EnterHelper";
+import { CalculateTime } from "function/calculateTime";
 
 const Filter = ({ options, setStatus, status }) => {
   return (
@@ -192,6 +193,9 @@ const TestPost = () => {
                             Người viết
                           </th>
                           <th className="sort" scope="col">
+                            Tổng thời gian làm bài
+                          </th>
+                          <th className="sort" scope="col">
                             Trạng thái
                           </th>
                           <th className="sort" scope="col">
@@ -211,6 +215,7 @@ const TestPost = () => {
                             </td>
                             <td>{item?.keywords?.map((item1) => item1)}</td>
                             <td>{item.receive?.user?.username}</td>
+                            <td align="center">{CalculateTime(item.receive?.receiveTime, item.receive?.finishTime)}</td>
                             <th>
                               <div
                                 style={{
